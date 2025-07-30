@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Cash</title>
+    <style>
+            * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+        background: #0b0f3a;
+        color: white;
+    }
+
+    .container {
+        /* margin: auto; */
+        margin-bottom: 10%;
+        background: #0b0f3a;
+        border-radius: 20px;
+        overflow: hidden;
+
+    }
+
+    .header {
+        position: relative;
+        text-align: center;
+        /* padding: 30px 20px; */
+    }
+
+    .header-image {
+        margin-top: 5%;
+        width: 150px;
+    }
+
+    .left-arrow {
+        width: 25px;
+        position: absolute;
+        left: 3%;
+        top: 6%;
+
+    }
+
+    .service-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: #5b67f3;
+        color: white;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .content {
+        border-radius: 15px;
+        width: 90%;
+        margin: auto;
+        position: relative;
+        background: white;
+        color: black;
+        padding: 20px;
+    }
+
+    .price {
+        font-size: 26px;
+        font-weight: bold;
+        color: #d60000;
+    }
+
+    .subinfo {
+        position: absolute;
+        right: 2%;
+        top: 22%;
+        font-size: 14px;
+        color: #888;
+    }
+
+    .detail {
+        color: #bbb;
+        font-size: 12px;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .footer {
+        background-color: #0b0f3a;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        z-index: 999;
+    }
+
+    .buy-now-button {
+        border: none;
+        background-color: yellow;
+        width: 90%;
+        border-radius: 50px;
+        padding: 10px 0;
+
+    }
+
+    /* ------------------------------------------------- */
+    .card {
+        margin: auto;
+        background-color: white;
+        border-radius: 15px;
+        width: 90%;
+        overflow: hidden;
+    }
+
+    .card-header {
+        border-radius: 0 0 15px 15px;
+        margin: auto;
+        width: 80%;
+        background: linear-gradient(to right, #043a95, #0d63dc);
+        color: white;
+        padding: 12px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .card-content {
+        padding: 20px;
+    }
+
+    .card-top {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .card-top img {
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;
+        border: 2px solid #0d63dc;
+    }
+
+    .bot-info {
+        font-size: 18px;
+    }
+
+    .bot-info .validity {
+        font-weight: bold;
+        color: #111;
+        font-size: 15px;
+        margin-top: 4px;
+    }
+
+    .details {
+        margin: auto;
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        font-size: 16px;
+    }
+
+    .details .price,
+    .details .earnings {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #333;
+    }
+
+    .details .price-icon,
+    .details .earnings-icon {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    .highlight {
+        color: red;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+
+
+
+    @media (max-width: 600px) {
+        .container {
+            margin-bottom: 25%;
+        }
+
+        .header-image {
+            margin-top: 10%;
+            width: 100px;
+        }
+
+
+
+        .details .price-icon,
+        .details .earnings-icon {
+            font-size: 15px;
+        }
+
+        .highlight {
+            font-size: 15px;
+        }
+
+        .detail {
+            font-size: 12px;
+        }
+
+    }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <img class="header-image" src="image/surprise-box-img.png" alt="AI Robot" />
+            <a href="home.html">
+                <img class="left-arrow" src="image/left-arrow.png" alt="left-arrow">
+            </a>
+            <div class="service-badge">
+                🤖 Service
+            </div>
+        </div>
+        <div class="content">
+            <div class="price">₹600 <span style="font-size: 14px;">/each</span></div>
+            <h2 style="margin-top: 10px;">AI Chatbot</h2>
+            <div class="subinfo">10w+ people</div>
+        </div>
+        <div class="detail">
+            Because the probability is rounded to three decimal places, there is a possibility that the total value is
+            not 100%
+        </div>
+        <div class="card">
+            <div class="card-header">Blind box prize pool, 100% win</div>
+            <div class="card-content">
+                <div class="card-top">
+                    <img src="image/cash-card-img.png" alt="AI Chatbot">
+                    <div class="bot-info">
+                        <div style="color: black;">AI Chatbot 4</div>
+                        <strong class="validity">validity:100 days</strong>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="price">
+                        <div class="price-icon">🏷️ Reference price:</div>
+                        <div class="highlight">600₹</div>
+                    </div>
+                    <div class="earnings">
+                        <div class="earnings-icon">📈 Daily earnings:</div>
+                        <div class="highlight">120₹</div>
+                    </div>
+                </div>
+                <hr style="color: black; margin-top: 2%;">
+            </div>
+            <div class="card-content">
+                <div class="card-top">
+                    <img src="image/cash-card-img.png" alt="AI Chatbot">
+                    <div class="bot-info">
+                        <div style="color: black;">AI Chatbot 4</div>
+                        <strong class="validity">validity:100 days</strong>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="price">
+                        <div class="price-icon">🏷️ Reference price:</div>
+                        <div class="highlight">600₹</div>
+                    </div>
+                    <div class="earnings">
+                        <div class="earnings-icon">📈 Daily earnings:</div>
+                        <div class="highlight">120₹</div>
+                    </div>
+                </div>
+                <hr style="color: black; margin-top: 2%;">
+            </div>
+            <div class="card-content">
+                <div class="card-top">
+                    <img src="image/cash-card-img.png" alt="AI Chatbot">
+                    <div class="bot-info">
+                        <div style="color: black;">AI Chatbot 4</div>
+                        <strong class="validity">validity:100 days</strong>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="price">
+                        <div class="price-icon">🏷️ Reference price:</div>
+                        <div class="highlight">600₹</div>
+                    </div>
+                    <div class="earnings">
+                        <div class="earnings-icon">📈 Daily earnings:</div>
+                        <div class="highlight">120₹</div>
+                    </div>
+                </div>
+                <hr style="color: black; margin-top: 2%;">
+            </div>
+            <div class="card-content">
+                <div class="card-top">
+                    <img src="image/cash-card-img.png" alt="AI Chatbot">
+                    <div class="bot-info">
+                        <div style="color: black;">AI Chatbot 4</div>
+                        <strong class="validity">validity:100 days</strong>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="price">
+                        <div class="price-icon">🏷️ Reference price:</div>
+                        <div class="highlight">600₹</div>
+                    </div>
+                    <div class="earnings">
+                        <div class="earnings-icon">📈 Daily earnings:</div>
+                        <div class="highlight">120₹</div>
+                    </div>
+                </div>
+                <hr style="color: black; margin-top: 2%;">
+            </div>
+        </div>
+
+        <div class="footer">
+            <button class="buy-now-button">BUY NOW <br><span style="color: black;">₹ 600</span></button>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+
+
+
+<!-- <div class="card">
+    <div class="card-header">Blind box prize pool, 100% win</div>
+    <div class="card-content">
+      <div class="card-top">
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="AI Chatbot">
+        <div class="bot-info">
+          <div>AI Chatbot 4</div>
+          <div class="validity">validity: <strong>100 days</strong></div>
+        </div>
+      </div>
+      <div class="details">
+        <div class="price">
+          <div class="price-icon">🏷️</div>
+          <div>Reference price:</div>
+          <div class="highlight">600₹</div>
+        </div>
+        <div class="earnings">
+          <div class="earnings-icon">📈</div>
+          <div>Daily earnings:</div>
+          <div class="highlight">120₹</div>
+        </div>
+      </div>
+    </div>
+  </div> -->

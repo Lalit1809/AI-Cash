@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Cash your card</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #003d99, #ffffff);
+            min-height: 100vh;
+            padding: 20px;
+            color: #fff;
+        }
+
+        .card-container {
+            max-width: 500px;
+            margin: auto;
+            background: transparent;
+            padding: 20px;
+        }
+
+        .card-header {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+        }
+
+        .card-header h1 {
+            left: 45%;
+            position: absolute;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .back-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .subtitle {
+            margin: 10px 0 20px;
+            font-size: 14px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .card-form {
+            display: flex;
+            flex-direction: column;
+            background: transparent;
+            border-radius: 8px;
+            padding: 10px 0;
+        }
+
+        .card-form label {
+            margin-top: 15px;
+            font-weight: 500;
+            color: white;
+        }
+
+        .card-form input {
+            padding: 12px;
+            margin-top: 6px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            background-color: #fff;
+            color: #333;
+        }
+
+        .submit-button {
+            margin-top: 30px;
+            padding: 15px;
+            background: linear-gradient(to right, #ff7300, #ff3d00);
+            color: white;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background: linear-gradient(to right, #e06200, #e52d00);
+        }
+
+        @media only screen and (max-width: 400px) {
+            .card-header h1 {
+                left: 35%;
+                font-size: 15px;
+                
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="card-header">
+        <button class="back-button"><a href="withdrawal.html">⬅️</a> </button>
+        <h1>Add your card</h1>
+    </header>
+    <div class="card-container">
+        <p class="subtitle">
+            Bind a receiving account for your convenience in withdrawing funds
+        </p>
+
+        <form class="card-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter name" />
+
+            <label for="bank">Bank accounts</label>
+            <input type="text" id="bank" placeholder="Please enter your bank accounts" />
+
+            <label for="mobile">Mobile</label>
+            <input type="tel" id="mobile" placeholder="Mobile number" />
+
+            <label for="ifsc">IFSC</label>
+            <input type="text" id="ifsc" placeholder="Please enter your ifsc" />
+
+            <button type="submit" class="submit-button"><a style="text-decoration: none;color: white;" href="withdrawal.html"> Submit</a></button>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Cash me</title>
+    <!-- Link the blue style -->
+    <!-- Add in base.html -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+<style>
+    body {
+
+        min-height: 100vh;
+        background: linear-gradient(to bottom, #0000CD 0%, white 40%);
+        background-repeat: no-repeat;
+    }
+
+    .container {
+        margin: 35px auto;
+        width: 90%;
+        position: relative;
+        padding: 10px;
+        border-radius: 8px;
+        margin-bottom: 10%;
+    }
+
+    .text-white {
+        margin-top: 15%;
+    }
+
+    .chota-robo {
+        position: absolute;
+        top: 90%;
+        right: 10%;
+        width: 70px;
+        height: 70px;
+        animation: moveUpDown 2s infinite ease-in-out;
+    }
+
+    @keyframes moveUpDown {
+        0% {
+            top: 90%;
+        }
+
+        50% {
+            top: 80%;
+
+        }
+
+        100% {
+            top: 90%;
+        }
+    }
+
+    .footer {
+        /* position: relative; */
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: #fff;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+        padding: 6px 0;
+        /* Reduce top and bottom padding */
+        height: 60px;
+    }
+
+    .footer-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #999;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .footer-item img {
+        width: 24px;
+        height: 24px;
+        margin-bottom: 3px;
+
+    }
+
+
+
+    .promote-icon {
+        color: #999;
+        flex-direction: column;
+        position: relative;
+        top: -20px;
+        /* padding: 4px; */
+        border-radius: 35%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .promote-icon img {
+        width: 70px;
+        height: 70px;
+    }
+
+    @media (max-width: 400px) {
+        .container {
+            margin: auto;
+            width: 95%;
+            margin-bottom: 28%;
+
+        }
+
+        .text-white {
+            margin-top: 15%;
+        }
+
+        .chota-robo {
+            position: absolute;
+            top: 70%;
+            right: 10%;
+            width: 70px;
+            height: 70px;
+
+        }
+
+        @keyframes moveUpDown {
+            0% {
+                top: 70%;
+            }
+
+            50% {
+                top: 60%;
+                /* move up */
+            }
+
+            100% {
+                top: 70%;
+            }
+        }
+
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="container-fluid px-0 pt-0">
+
+            <div class="d-flex align-items-center justify-content-between position-relative">
+                <div class="d-flex align-items-center gap-3">
+                    <img src="image/AI_cash logo.png" alt="Logo" class="rounded-circle"
+                        style="width: 70px; height: 70px; margin-top: 0%;">
+                    <div class="text-white">
+                        <p class="mb-1">ID: <strong>1380548</strong></p>
+                        <p class="mb-5">Account number: <strong>9784741152</strong></p>
+                    </div>
+                </div>
+                <div>
+                    <img class="chota-robo" src="image/chota-robo.png" alt="Bot">
+                </div>
+            </div>
+
+            <div class="card text-white" style=" margin-top: 3%; background-color: black; border-radius: 20px;">
+                <div class="card-body d-flex justify-content-between align-items-center">
+                    <div>
+                        <p class="mb-1">Total Balance <i class="bi bi-eye"></i></p>
+                        <h4 class="mb-0">₹0</h4>
+                    </div>
+                    <a href="withdrawal.html" class="btn btn-warning rounded-pill fw-bold px-4">Withdrawal</a>
+                </div>
+            </div>
+
+            <div class="mt-4 bg-white rounded-4 shadow-sm">
+                <a href="#"
+                    class="list-group-item list-group-item-action border-0 d-flex justify-content-between align-items-center py-3 px-4">
+                    <div><i class="bi bi-cpu me-2 text-primary"></i> My Device</div>
+                    <i class="bi bi-chevron-right"></i>
+                </a>
+                <hr class="m-0">
+                <a href="add-your-card.html"
+                    class="list-group-item list-group-item-action border-0 d-flex justify-content-between align-items-center py-3 px-4">
+                    <div><i class="bi bi-credit-card-2-front me-2 text-primary"></i> Bank Card Binding</div>
+                    <i class="bi bi-chevron-right"></i>
+                </a>
+                <hr class="m-0">
+                <a href="info.html"
+                    class="list-group-item list-group-item-action border-0 d-flex justify-content-between align-items-center py-3 px-4">
+                    <div><i class="bi bi-info-circle me-2 text-primary"></i> Company Introduction</div>
+                    <i class="bi bi-chevron-right"></i>
+                </a>
+                <hr class="m-0">
+                <a href="#"
+                    class="list-group-item list-group-item-action border-0 d-flex justify-content-between align-items-center py-3 px-4">
+                    <div><i class="bi bi-cloud-arrow-down me-2 text-primary"></i> App Download</div>
+                    <i class="bi bi-chevron-right"></i>
+                </a>
+            </div>
+
+
+            <div class="mt-4 bg-white rounded-4 shadow-sm">
+                <a href="#"
+                    class="list-group-item list-group-item-action border-0 d-flex justify-content-between align-items-center py-3 px-4">
+                    <div><i class="bi bi-lock me-2 text-primary"></i> Login Password Change</div>
+                    <i class="bi bi-chevron-right"></i>
+                </a>
+                <hr class="m-0">
+                <a href="#"
+                    class="list-group-item list-group-item-action border-0 d-flex justify-content-between align-items-center py-3 px-4">
+                    <div><i class="bi bi-lock me-2 text-primary"></i> Change Payment Password</div>
+                    <i class="bi bi-chevron-right"></i>
+                </a>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="login.html" class="btn btn-outline-dark fw-bold w-100 px-5 py-2 rounded-pill">Log out</a>
+            </div>
+
+        </div>
+    </div>
+    <div class="footer">
+        <a href="home.html" class="footer-item">
+            <img src="image/home.png" alt="Home">
+            <span>Home</span>
+        </a>
+
+        <a href="#" class="footer-item">
+            <img src="image/fortune.png" alt="Fortune">
+            <span>Fortune</span>
+        </a>
+
+        <div class="promote-icon">
+            <img src="image/footer-robo.png" alt="Promote">
+            <span>Promote</span>
+        </div>
+
+        <a href="#" class="footer-item">
+            <img src="image/task.png" alt="Task">
+            <span>Task</span>
+        </a>
+
+        <a href="me.html" class="footer-item">
+            <img src="image/me.png" alt="Me">
+            <span>Me</span>
+        </a>
+    </div>
+</body>
+
+</html>

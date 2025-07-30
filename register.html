@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alcash Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0b1228;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 360px;
+            background-color: #0e1c3a;
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .logo {
+            border-radius: 50px;
+            width: 80px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 10px;
+            background-color: #122244;
+            color: white;
+            font-size: 14px;
+        }
+
+        input::placeholder {
+            color: #888;
+        }
+
+        .btn {
+            background: linear-gradient(to right, #3a78f0, #1d2af0);
+            padding: 14px;
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .login-link {
+            color: #54a3ff;
+            margin-top: 15px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .customer-service {
+            margin-top: 20px;
+            background-color: #1a2c4f;
+            padding: 10px;
+            border-radius: 12px;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .customer-service i {
+            margin-right: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <div class="container">
+            <img src="image/AI_cash logo.png" alt="Alcash Logo" class="logo">
+
+            <input type="text" placeholder="+91 Phone Number">
+            <input type="password" placeholder="Set a Password">
+            <input type="password" placeholder="Enter password again">
+            
+
+            <button class="btn"> <a href="login.html" style="color: white; text-decoration: none;">Register</a></button>
+
+            <a href="login.html" class="login-link">Login</a>
+
+           
+        </div>
+    </form>
+
+</body>
+
+</html>

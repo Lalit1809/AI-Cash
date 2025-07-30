@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alcash Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #0b1228;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 350px;
+      background-color: #0e1c3a;
+      border-radius: 20px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      position: relative;
+    }
+
+    .logo {
+      border-radius: 50px;
+      width: 80px;
+      margin-bottom: 15px;
+    }
+
+    .robo {
+      position: absolute;
+      width: 120px;
+      right: 0;
+      top: -10%;
+      animation: moveUpDown 2s infinite ease-in-out;
+
+    }
+
+    @keyframes moveUpDown {
+      0% {
+        top: -10%;
+      }
+
+      50% {
+        top: -20px;
+        /* move up */
+      }
+
+      100% {
+        top: -10%;
+      }
+    }
+
+    .robot {
+      width: 80px;
+      position: absolute;
+      top: 90px;
+      right: 10px;
+    }
+
+    .form-group {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-size: 14px;
+      margin-bottom: 6px;
+      display: block;
+      color: #bbb;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      background-color: #122244;
+      color: white;
+      font-size: 14px;
+    }
+
+    input::placeholder {
+      color: #888;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      background: linear-gradient(to right, #3a78f0, #1d2af0);
+      border: none;
+      border-radius: 25px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .options {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .options a {
+      color: #54a3ff;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    .customer-service {
+      margin-top: 20px;
+      background-color: #1a2c4f;
+      padding: 10px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .customer-service i {
+      margin-right: 6px;
+    }
+
+    @media (max-height: 600px) {
+      body {
+        align-items: flex-start;
+        padding-top: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <img class="robo" src="image/robot-img.png" alt="AI cash robot">
+    <img src="image/AI_cash logo.png" alt="Alcash Logo" class="logo">
+
+
+    <div class="form-group">
+      <label>Phone number</label>
+      <input type="text" placeholder="+91  Phone Number">
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" placeholder="password">
+    </div>
+
+    <button class="btn"> <a href="home.html" style="color: white; text-decoration: none;">Login</a></button>
+
+    <div class="options">
+      <a href="forgot-password.html" style="color: white;">Forgot Password</a> |
+      <a href="register.html">Register</a>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>AI Cash home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".more-link").click(function () {
+        $(".sliding").slideToggle();
+      });
+    });
+  </script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #f2f3f8;
+      color: #333;
+    }
+
+    .header {
+      background: #0c0849;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo span {
+      margin-top: 7%;
+      font-size: 27px;
+      font-weight: bold;
+      color: #00ffd0;
+      margin-left: 10px;
+    }
+
+    .header-icons {
+      font-size: 17px;
+    }
+
+    .container {
+      margin: 35px auto;
+      width: 90%;
+      position: relative;
+      /* background: rgb(202, 198, 198); */
+      /* text-align: center; */
+      padding: 10px;
+      /* margin: 10px; */
+      border-radius: 8px;
+      margin-bottom: 10%;
+    }
+
+    /* --------------------------------------------------- */
+    .robot-image {
+      position: absolute;
+      width: 150px;
+      right: 0;
+      top: 0;
+      animation: moveUpDown 2s infinite ease-in-out;
+    }
+
+    @keyframes moveUpDown {
+      0% {
+        top: 0;
+      }
+
+      50% {
+        top: -20px;
+        /* move up */
+      }
+
+      100% {
+        top: 0;
+      }
+    }
+
+    .amount-card {
+      position: relative;
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+      background: #fff;
+      /* text-align: center; */
+      padding: 10px;
+      /* margin: 5px; */
+      border-radius: 15px;
+
+      /* add this */
+    }
+
+    .recharge-withdrawal-card {
+      gap: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 30px;
+
+    }
+
+    .recharge,
+    .withdrawal {
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+      flex: 1 1 45%;
+      padding: 12px 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .pending-tasks {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin: 15px 0px;
+      gap: 10px;
+    }
+
+    .card {
+      position: relative;
+      flex: 1 1 40%;
+      padding: 15px;
+      border-radius: 10px;
+      background-color: darkblue;
+      color: white;
+    }
+
+    .card1 {
+      position: relative;
+      background-color: black;
+      color: white;
+      flex: 1 1 40%;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .heading {
+      font-size: 20px;
+    }
+
+    .s-heading {
+      color: whitesmoke;
+    }
+
+    .btn-small {
+      background-color: yellow;
+      padding: 8px 17px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .image {
+      position: absolute;
+      width: 100px;
+      bottom: 0;
+      right: 0;
+    }
+
+
+    /* cash card */
+    .cash-box {
+      padding: 0 0 15px;
+      border-radius: 15px;
+      background-color: darkblue;
+    }
+
+    .cash-header {
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .cash-card {
+      color: white;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .card-img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      margin-right: 15px;
+      border-radius: 5px;
+      background: white;
+    }
+
+    .card-content {
+      flex-direction: row;
+      flex-wrap: wrap;
+      position: relative;
+      display: flex;
+      flex: 1;
+    }
+
+    .price {
+      color: #ffc107;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: #ccc;
+      font-size: 13px;
+      margin-left: 8px;
+    }
+
+    .limit {
+      font-size: 14px;
+      margin-top: 5px;
+      color: #aaa;
+    }
+
+    .buy-button {
+      margin: auto;
+      width: 93%;
+      border-radius: 50px;
+      background: #ffd400;
+      color: black;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 12px;
+      cursor: pointer;
+    }
+
+    .box-section {
+      position: relative;
+      border-radius: 15px;
+      margin: auto;
+      width: 96%;
+      background: #fff;
+      color: black;
+      padding: 0px 5px 15px 15px;
+      text-align: center;
+    }
+
+    .box-title {
+      margin: auto;
+      width: 50%;
+      background: darkblue;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      border-radius: 0 0 20px 20px;
+    }
+
+    .bot-details {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .AI-chatbot-4 {
+      padding: 15px;
+    }
+
+    .card-image {
+      width: 50px;
+      height: 50px;
+      margin-right: 5px;
+      border-radius: 5px;
+    }
+
+    .reference {
+      right: 3%;
+      position: absolute;
+      flex-direction: column;
+      justify-content: space-around;
+      font-size: 14px;
+    }
+
+    .reference div {
+      text-align: center;
+    }
+
+    .reference span {
+      color: red;
+      font-weight: bold;
+    }
+
+    .more-link {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #0033cc;
+      cursor: pointer;
+    }
+
+
+    .footer {
+      /* position: relative; */
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #fff;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+      padding: 6px 0;
+      /* Reduce top and bottom padding */
+      height: 60px;
+    }
+
+    .footer-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #999;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .footer-item img {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 3px;
+
+    }
+
+
+
+    .promote-icon {
+      color: #999;
+      flex-direction: column;
+      position: relative;
+      top: -20px;
+      padding: 4px;
+      border-radius: 35%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .promote-icon img {
+      width: 70px;
+      height: 70px;
+    }
+
+    /* for mobile screen */
+
+    @media only screen and (max-width: 400px) {
+      .robot-image {
+        width: 100px;
+      }
+
+      .container {
+        width: 93%;
+        /* margin: 20px auto; */
+        margin-bottom: 30%;
+      }
+
+      .recharge,
+      .withdrawal {
+        flex: 1 1 45%;
+        font-size: 20px;
+        padding: 8px 23px;
+      }
+
+      .pending-tasks {
+        display: flex;
+      }
+
+      .card,
+      .card1 {
+        flex: 1 1 10%;
+        padding: 10px;
+      }
+
+      .heading {
+        font-size: 16px;
+      }
+
+      .s-heading {
+        font-size: 14px;
+        color: whitesmoke;
+      }
+
+      .btn-small {
+        font-size: 14px;
+        background-color: yellow;
+        padding: 6px 12px;
+        border-radius: 5px;
+      }
+
+      .image {
+        position: absolute;
+        width: 70px;
+        bottom: 0;
+        right: 0;
+      }
+
+      /* cash card */
+      .box-section {
+        position: relative;
+        border-radius: 15px;
+        margin: auto;
+        width: 85%;
+        background: #fff;
+        color: black;
+        padding: 0px 15px 15px 15px;
+        text-align: center;
+      }
+
+      .box-title {
+        margin: auto;
+        width: 85%;
+        background: darkblue;
+        color: white;
+        padding: 10px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        border-radius: 0 0 20px 20px;
+      }
+
+      .bot-details {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .AI-chatbot-4 {
+        padding: 2px;
+      }
+
+      .strong {
+        font-size: 14px;
+      }
+
+      .Ai-span {
+        font-size: 13px;
+      }
+
+      .card-image {
+        width: 50px;
+        height: 50px;
+        margin-right: 15px;
+        border-radius: 5px;
+      }
+
+      .reference {
+        display: flex;
+        justify-content: space-around;
+        font-size: 14px;
+      }
+
+      .reference div {
+        text-align: center;
+      }
+
+      .reference span {
+        color: red;
+        font-weight: bold;
+      }
+
+      /* 
+      .footer-item span {
+        font-size: 12px;
+      } */
+
+
+    }
+  </style>
+
+</head>
+
+<body>
+  <div>
+    <header class="header">
+      <div class="logo" style="display: flex;">
+        <img style="border-radius: 25px; width: 50px;" src="image/AI_cash logo.png" alt="AI Cash" />
+        <span>AI cash</span>
+      </div>
+      <div class="header-icons">
+        <span class="notify">🔔</span>
+        <span class="lang">🌐 English </span>
+      </div>
+    </header>
+    <div class="container">
+      <section class="amount-card">
+        <img class="robot-image" src="image/robot-img.png" alt="AI cash robot image">
+        <p>Remaining Amount</p>
+        <h2>0</h2>
+        <p class="total"><span class="red" style="color: red;">₹</span>Total Earnings Received <span class="red"
+            style="color: red;">0</span></p>
+      </section>
+      <section class="recharge-withdrawal-card">
+        <button class="recharge" style="background: #e74c3c;"> <a href="recharge.html"
+            style="color: white; text-decoration: none; font-weight: bold;">
+            Recharge</a></button>
+        <button class="withdrawal" style="background: #2ecc71;"><a href="withdrawal.html"
+            style="color: white; text-decoration: none; font-weight: bold;">Withdrawal</a></button>
+
+      </section>
+      <section class="pending-tasks">
+        <div class="card">
+          <p class="heading">My device</p>
+          <h4 class="s-heading">Pending income <span style="color: yellow;">+200</span></h4>
+          <button class="btn-small">Receive</button>
+          <img class="image" src="image/hand.png" alt="hand image">
+        </div>
+        <div class="card1">
+          <p class="heading">Complete the task</p>
+          <h4 class="s-heading">Win a prize of one million ₹</h4>
+          <button class="btn-small">Receive</button>
+          <img class="image" src="image/img123.png" alt="robo">
+        </div>
+      </section>
+      <div class="cash-header">
+        <span>Cash box</span>
+        <span style="font-size: 14px; color: gray;">More</span>
+      </div>
+
+      <section class="cash-box">
+        <div class="cash-card">
+          <div class="card-content">
+            <div>
+              <img class="card-img" src="image/cash-card-img.png" alt="Chatbot">
+            </div>
+            <div style="position: relative;">
+              <p>AI Chatbot</p>
+              <h2 style="position: absolute; top: 15px;" class="price">₹600 <span style="position: absolute; top: 14px;"
+                  class="old-price">2000</span></h2>
+            </div>
+            <p style="position: absolute; right: 5%; top: 55%;" class="limit">purchase limit: 2</p>
+          </div>
+          <div class="buy-button"><a style="text-decoration: none;color: black;" href="surprise-box.html"> Buy surprise
+              boxes</a></div>
+        </div>
+
+        <div class="box-section">
+          <div class="box-title">Open the box to obtain any of the following products.</div>
+
+          <div class="bot-details">
+
+            <div style="width: 50px;height: 50px;  border: 2px solid blue; border-radius: 10px;">
+              <img class="card-image" src="image/cash-card-img.png" alt="Bot">
+            </div>
+            <div class="AI-chatbot-4">
+              <strong class="strong">AI Chatbot 4</strong><br>
+              <span class="Ai-span" style="color: gray;">validity: 100 days</span>
+            </div>
+
+            <div class="reference">
+              <div>
+                Reference price:<span>600₹</span>
+              </div>
+              <div>
+                Daily earnings:<span>120₹</span>
+              </div>
+            </div>
+          </div>
+          <hr style="color: black;">
+          <div class="sliding" style="display: none;">
+            <div class="bot-details">
+
+              <div style="width: 50px;height: 50px;  border: 2px solid blue; border-radius: 10px;">
+                <img class="card-image" src="image/cash-card-img.png" alt="Bot">
+              </div>
+              <div class="AI-chatbot-4">
+                <strong class="strong">AI Chatbot 4</strong><br>
+                <span class="Ai-span" style="color: gray;">validity: 100 days</span>
+              </div>
+
+              <div class="reference">
+                <div>
+                  Reference price:<span>600₹</span>
+                </div>
+                <div>
+                  Daily earnings:<span>120₹</span>
+                </div>
+              </div>
+            </div>
+            <hr style="color: black;">
+            <div class="bot-details">
+
+              <div style="width: 50px;height: 50px;  border: 2px solid blue; border-radius: 10px;">
+                <img class="card-image" src="image/cash-card-img.png" alt="Bot">
+              </div>
+              <div class="AI-chatbot-4">
+                <strong class="strong">AI Chatbot 4</strong><br>
+                <span class="Ai-span" style="color: gray;">validity: 100 days</span>
+              </div>
+
+              <div class="reference">
+                <div>
+                  Reference price:<span>600₹</span>
+                </div>
+                <div>
+                  Daily earnings:<span>120₹</span>
+                </div>
+              </div>
+            </div>
+            <hr style="color: black;">
+            <div class="bot-details">
+
+              <div style="width: 50px;height: 50px;  border: 2px solid blue; border-radius: 10px;">
+                <img class="card-image" src="image/cash-card-img.png" alt="Bot">
+              </div>
+              <div class="AI-chatbot-4">
+                <strong class="strong">AI Chatbot 4</strong><br>
+                <span class="Ai-span" style="color: gray;">validity: 100 days</span>
+              </div>
+
+              <div class="reference">
+                <div>
+                  Reference price:<span>600₹</span>
+                </div>
+                <div>
+                  Daily earnings:<span>120₹</span>
+                </div>
+              </div>
+            </div>
+            <hr style="color: black;">
+            <div class="bot-details">
+
+              <div style="width: 50px;height: 50px;  border: 2px solid blue; border-radius: 10px;">
+                <img class="card-image" src="image/cash-card-img.png" alt="Bot">
+              </div>
+              <div class="AI-chatbot-4">
+                <strong class="strong">AI Chatbot 4</strong><br>
+                <span class="Ai-span" style="color: gray;">validity: 100 days</span>
+              </div>
+
+              <div class="reference">
+                <div>
+                  Reference price:<span>600₹</span>
+                </div>
+                <div>
+                  Daily earnings:<span>120₹</span>
+                </div>
+              </div>
+            </div>
+            <hr style="color: black;">
+
+          </div>
+
+          <div class="more-link">More blind box prizes ⬇️</div>
+        </div>
+        <div></div>
+      </section>
+    </div>
+
+    <div class="footer">
+      <a href="#" class="footer-item">
+        <img src="image/home.png" alt="Home">
+        <span>Home</span>
+      </a>
+
+      <a href="#" class="footer-item">
+        <img src="image/fortune.png" alt="Fortune">
+        <span>Fortune</span>
+      </a>
+
+      <div class="promote-icon">
+        <img src="image/footer-robo.png" alt="Promote">
+        <span>Promote</span>
+      </div>
+
+      <a href="#" class="footer-item">
+        <img src="image/task.png" alt="Task">
+        <span>Task</span>
+      </a>
+
+      <a href="me.html" class="footer-item">
+        <img src="image/me.png" alt="Me">
+        <span>Me</span>
+      </a>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Cash withdrawal</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 70%;
+            margin: auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .record-link {
+            color: blue;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            gap: 1%;
+        }
+
+        .tab,
+        .tab1 {
+            flex: 1;
+            padding: 10px;
+            background: #f0f0f0;
+            border: none;
+            cursor: pointer;
+        }
+
+        .tab:active,
+        .tab1:active {
+            border-radius: 10px;
+            border-bottom: 3px solid #007bff;
+            background: #ffffff;
+            font-weight: bold;
+        }
+
+        .form label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .balance {
+            font-size: 14px;
+            color: #444;
+            margin-bottom: 8px;
+        }
+
+        input[type="number"],
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .account-row {
+            position: relative;
+        }
+
+        .add-link {
+            position: absolute;
+            top: 14px;
+            right: 10px;
+            font-size: 14px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .rules {
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+
+        .rules h3 {
+            margin-bottom: 10px;
+        }
+
+        .withdraw-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(to right, #ff8a00, #ff3d00);
+            color: white;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .withdraw-btn:hover {
+            background: linear-gradient(to right, #e07a00, #e63400);
+        }
+
+        @media only screen and (max-width: 400px) {
+            .container {
+                max-width: 100%;
+            }
+
+            h2 {
+                font-size: 100%;
+            }
+
+            .btn-record {
+                font-size: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <a href="home.html">⬅️</a>
+        <h2>Ordinary Withdrawal</h2>
+        <a class="btn-record" style="text-decoration: none;" class="right" href="#">Record</a>
+    </div>
+
+    <div class="container">
+        <div class="tabs">
+            <button id="O-withdrawal" class="tab">Ordinary Withdrawal</button>
+            <button class="tab1">USDT Withdrawal</button>
+        </div>
+
+        <div id="ordinary-form" class="form">
+            <label for="amount">Withdrawal Amount</label>
+            <p class="balance">Balance: ₹0</p>
+            <input type="number" id="amount" placeholder="Enter your withdrawal amount" />
+
+            <label for="account">Collection Account</label>
+            <div class="account-row">
+                <input type="text" id="account" placeholder="Bank Collection Account" />
+                <a href="add-your-card.html" class="add-link">Add</a>
+            </div>
+
+            <div class="rules">
+                <h3>Withdrawal rules:</h3>
+                <ol>
+                    <li>The minimum withdrawal amount is 200 RS. The maximum single withdrawal amount is 100000000 RS.
+                    </li>
+                    <li>After submitting the withdrawal request, the funds will be credited to your account within 24 to
+                        72 hours. Please be patient.</li>
+                    <li>Please ensure that your withdrawal bank account information is correct.</li>
+                    <li>The withdrawal fee is 25%.</li>
+                    <li>Cash withdrawal is available only after successful investment.</li>
+                </ol>
+            </div>
+
+            <button class="withdraw-btn">Withdraw</button>
+        </div>
+        <!-- -------------------------------------------------------------------- -->
+
+
+        <div id="usdt-form" class="form" style="display: none;">
+            <label for="amount">Withdrawal Amount</label>
+            <p class="balance">Balance: ₹0</p>
+            <input type="number" id="amount" placeholder="Enter your withdrawal amount" />
+            <div style="display: flex;justify-content: space-between">
+                <label for="account">₹Address</label>
+                <label for="account"><span style="color:rgb(105, 158, 176) ;font-weight: bold;">Bind Address</span>
+                    &#11208</label>
+            </div>
+            <div class="account-row">
+                <input type="text" id="account" placeholder="Bank Collection Account" />
+
+            </div>
+
+            <div class="rules">
+                <h3>Withdrawal rules:</h3>
+                <p>It is prohibited to withdrawal cash using USDT. Any financial losses caused by withdrawing cash using
+                    USDT will be born by you.</p>
+            </div>
+
+            <button class="withdraw-btn">Withdraw</button>
+        </div>
+
+
+    </div>
+    <script>
+        $(document).ready(function () {
+            $(".tab1").click(function () {
+                $("#ordinary-form").css("display", "none");
+                $("#usdt-form").css("display", "block");
+            });
+            $("#O-withdrawal").click(function () {
+                $("#usdt-form").css("display", "none");
+                $("#ordinary-form").css("display", "block");
+
+            });
+        });
+    </script>
+</body>
+
+</html>
